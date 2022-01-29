@@ -1,0 +1,27 @@
+{
+  "name": "nftgon",
+  "version": "1.0.0",
+  "description": "NFT-ize any avatar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/3Gigs/nftgon.git"
+  },
+  "keywords": [
+    "Twitter",
+    "avatar",
+    "NFT"
+  ],
+  "author": "3Gigs",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/3Gigs/nftgon/issues"
+  },
+  "homepage": "https://github.com/3Gigs/nftgon#readme",
+  "dependencies": {
+    "imagemagick": "^0.1.3"
+  }
+}
