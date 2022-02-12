@@ -1,7 +1,7 @@
-export interface toImgMethods {
-    toPNGStream(config?: PngConfig): PNGStream;
-    toJPEGStream(config?: JpegConfig): JPEGStream;
-    toDataURL(mimetime?: string): string;
-}
+import { Canvas, JpegConfig, JPEGStream, NodeCanvasRenderingContext2DSettings, 
+    PngConfig, PNGStream } from "canvas";
 
-export function nftify(path: string): toImgMethods;
+export declare class NFTGon {
+    static nftify(path: string): Canvas;
+    private static hexagonify(ctx: NodeCanvasRenderingContext2DSettings);
+}
