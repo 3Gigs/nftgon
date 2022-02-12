@@ -3,7 +3,7 @@ const { loadImage, createCanvas } = require("canvas");
 exports.nftifty =  async function(input) {
     const canvas = createCanvas(400, 400);
     const ctx = canvas.getContext("2d");
-    const inputImg = await loadImage(__dirname + input);
+    const inputImg = await loadImage(input);
 
     hexagonify(ctx);
     ctx.drawImage(inputImg, 0, 0);
