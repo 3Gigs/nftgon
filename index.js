@@ -1,6 +1,6 @@
 const { loadImage, createCanvas } = require("canvas");
 
-export async function nftify(input) {
+exports.nftifty =  async function(input) {
     const canvas = createCanvas(400, 400);
     const ctx = canvas.getContext("2d");
     const inputImg = await loadImage(__dirname + "/img.jpg");
