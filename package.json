@@ -11,9 +11,9 @@
     "url": "git+ssh://git@github.com/3Gigs/nftgon.git"
   },
   "keywords": [
-    "Twitter",
     "avatar",
-    "NFT"
+    "NFT",
+    "hexagon"
   ],
   "author": "3Gigs",
   "license": "GPL-3.0",
