@@ -7,7 +7,7 @@ const { loadImage, createCanvas } = require("canvas");
  * @returns {Promise} An object containing functions for obtaining the NFT-ified
  *      image, derived from Canvas API
  */
-async function nftify(path) {
+module.nftify = async function nftify(path) {
     const canvas = createCanvas(400, 400);
     const ctx = canvas.getContext("2d");
     const inputImg = await loadImage(input);
