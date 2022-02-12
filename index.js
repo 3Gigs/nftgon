@@ -1,6 +1,13 @@
 const { loadImage, createCanvas } = require("canvas");
 
-exports.nftifty =  async function(input) {
+/**
+ * NFT-ifies your avatar
+ * 
+ * @param path 
+ * @returns {Promise} An object containing functions for obtaining the NFT-ified
+ *      image, derived from Canvas API
+ */
+exports.nftify =  async function(path) {
     const canvas = createCanvas(400, 400);
     const ctx = canvas.getContext("2d");
     const inputImg = await loadImage(input);
