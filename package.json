@@ -3,6 +3,9 @@
   "version": "1.2.0",
   "description": "NFT-ize any avatar",
   "main": "index.js",
+  "bin": {
+    "nftgon": "./bin/cli.js"
+  },
   "scripts": {
     "test": "node test.js"
   },
