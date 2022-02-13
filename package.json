@@ -1,6 +1,6 @@
 {
   "name": "nftgon",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "NFT-ize any avatar",
   "main": "index.js",
   "scripts": {
@@ -23,5 +23,8 @@
   "homepage": "https://github.com/3Gigs/nftgon#readme",
   "dependencies": {
     "canvas": "^2.9.0"
+  },
+  "devDependencies": {
+    "image-size": "^1.0.1"
   }
 }
