@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 const { NFTGon } = require("../");
-const { createWriteStream, existsSync } = require("fs")
+const { createWriteStream } = require("fs")
 
 const argv = process.argv.slice(2);
 
