@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 const { NFTGon } = require("../");
-const { createWriteStream } = require("fs")
+const { createWriteStream, existsSync } = require("fs")
 
 const argv = process.argv.slice(2);
 
@@ -29,12 +29,15 @@ for(let i = 0; i < argv.length; i++) {
             break;
     }
 }
-
 (async () => {
     const victims = args.inputUrls.split(" ");
     victims.pop();
-    const out = createWriteStream(args.outputPath.length > 0 
-        ? args.outputPath : (`${__dirname}/a.png`));
+    if(args.outputPath.length === 0) {
+        args.outputPath = `${process.cwd()}/${args.inputUrls
+            .match(/[^\/]+$/)[0]
+            .substring(0, args.inputUrls.lastIndexOf(".") - 2)}_nft.png`;
+    }
+    const out = createWriteStream(args.outputPath);
 
     for(input of victims) {
         const cv = await NFTGon.nftify(input);
