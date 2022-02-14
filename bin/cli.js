@@ -32,23 +32,43 @@ for(let i = 0; i < argv.length; i++) {
 (async () => {
     const victims = args.inputUrls.split(" ");
     victims.pop();
-    if(args.outputPath.length === 0) {
-        args.outputPath = `${process.cwd()}/${args.inputUrls
-            .match(/[^\/]+$/)[0]
-            .substring(0, args.inputUrls.lastIndexOf(".") - 2)}_nft.png`;
-    }
-    const out = createWriteStream(args.outputPath);
+    if(victims.length > 0) {
+        if(args.outputPath.length === 0) {
+            args.outputPath = `${process.cwd()}/${args.inputUrls
+                .match(/[^\/]+$/)[0]
+                .substring(0, args.inputUrls.lastIndexOf("."))}_nft.png`;
+        }
 
-    for(input of victims) {
-        const cv = await NFTGon.nftify(input);
-        if(args.options.length > 0) {
-            const opts = JSON.parse(`{${args.options}}`);
-            const png = cv.createPNGStream(opts);
-            png.pipe(out);
+        for(input of victims) {
+            try {
+                const cv = await NFTGon.nftify(input);
+                const out = createWriteStream(args.outputPath);
+                if(args.options.length > 0) {
+                    const opts = JSON.parse(`{${args.options}}`);
+                    const png = cv.createPNGStream(opts);
+                    png.pipe(out);
+                }
+                else {
+                    const png = cv.createPNGStream();
+                    png.pipe(out);
+                }
+            }
+            catch(e) {
+                if(e.code == "ENOENT") {
+                    kill("Invalid input file(s)!");
+                }
+                else {
+                    throw(e);
+                }
+            }
         }
-        else {
-            const png = cv.createPNGStream();
-            png.pipe(out);
-        }
+    }
+    else {
+        kill("No input files");
     }
 })();
+
+function kill(msg) {
+    console.error(`Erorr: ${msg}`);
+    process.exit(1);
+}
