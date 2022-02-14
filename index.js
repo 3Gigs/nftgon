@@ -65,7 +65,6 @@ class NFTGon {
 
         return canvas;
     }
-
 }
 
 module.exports = {
