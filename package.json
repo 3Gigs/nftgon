@@ -1,6 +1,6 @@
 {
   "name": "nftgon",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "NFT-ize any avatar",
   "main": "index.js",
   "bin": {
