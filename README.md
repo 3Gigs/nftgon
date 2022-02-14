@@ -1,4 +1,5 @@
-**Turn any 1:1 sized avatar into an NFT!**
+**Turn any 1:1 sized avatar into an NFT!**  
+![Example](example_nft.png)
 
 - [Installation](#installation)
 - [Usage](#usage)
